@@ -1,0 +1,8 @@
+{
+  "name": "react-font-resizer",
+  "version": "1.0.0",
+  "description": "Automatically resizes an element's font size to fit inside its parent container.",
+  "peerDependencies": {
+    "react": "^0.14 || ^15.0.0-rc || ^15.0"
+  }
+}
