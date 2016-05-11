@@ -4,7 +4,7 @@ Automatically resizes the font to prevent it from overflowing its container. The
 ## Use
 Since this package works by checking if the element is overflowing its container, the element whose text you want resized needs to have `white-space: nowrap` or `white-space: pre` to prevent it from wrapping. 
 
-```
+```js
 import FontResizer from 'react-font-resizer'
 
 const MyComponent = ({text}) => (
