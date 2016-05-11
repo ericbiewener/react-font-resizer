@@ -1,7 +1,7 @@
-var React = require('react');
+import React from 'react'
 
 
-var FontResizer = React.createClass({
+const FontResizer = React.createClass({
 
 	componentDidMount: function() {
 		this.innerEl = this.el.children[0]
@@ -14,22 +14,22 @@ var FontResizer = React.createClass({
 	},
 
 	resize: function() {
-		var fontSize = parseFloat(getComputedStyle(this.innerEl).fontSize)
+		let fontSize = parseFloat(getComputedStyle(this.innerEl).fontSize)
 		resizeTextToFit(this.innerEl, this.el, fontSize, this.maxFontSize)
 	},
 
 	render: function() {
-		return 	<div className='font-size-adapter' ref={el => this.el = el}>
+		return 	<div className='font-resizer' ref={el => this.el = el}>
 					{this.props.children}
 				</div>
 	}
 })
 
 function resizeTextToFit(innerEl, outerEl, fontSize, maxFontSize) {
-	var overflow = innerEl.scrollWidth - outerEl.offsetWidth
+	let overflow = innerEl.scrollWidth - outerEl.offsetWidth
 
 	if (overflow > 0) {
-		var newFontSize = fontSize - .1
+		let newFontSize = fontSize - .1
 		innerEl.style.fontSize = `${newFontSize}px`
 
 		if (innerEl.scrollWidth - outerEl.offsetWidth > 0) {
@@ -37,11 +37,11 @@ function resizeTextToFit(innerEl, outerEl, fontSize, maxFontSize) {
 		}
 	}
 	else if (overflow < 0) {
-		var newFontSize = fontSize + .1
+		let newFontSize = fontSize + .1
 		if (newFontSize > maxFontSize) return
 		innerEl.style.fontSize = `${newFontSize}px`
 		resizeTextToFit(innerEl, outerEl, newFontSize, maxFontSize)
 	}
 }
 
-module.exports = FontResizer;
+export default FontResizer
