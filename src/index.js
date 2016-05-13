@@ -4,7 +4,6 @@ import React from 'react'
 const FontResizer = React.createClass({
 
 	componentDidMount: function() {
-		console.log('MOUNTEd')
 		this.innerEl = this.el.children[0]
 		this.maxFontSize = parseFloat(getComputedStyle(this.el).fontSize)
 		window.addEventListener('resize', this.resize);
@@ -31,8 +30,6 @@ const FontResizer = React.createClass({
 
 function resizeTextToFit(innerEl, outerEl, fontSize, maxFontSize) {
 	let overflow = innerEl.scrollWidth - outerEl.offsetWidth
-
-	console.log(innerEl, outerEl)
 
 	if (overflow > 0) {
 		let newFontSize = fontSize - .1
