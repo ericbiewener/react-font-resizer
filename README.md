@@ -2,14 +2,16 @@
 Automatically resizes the font to prevent it from overflowing its container. The font will not increase over its initial size, but it will shrink as much as necessary.
 
 ## Use
-Since this package works by checking if the element is overflowing its container, the element whose text you want resized needs to have `white-space: nowrap` or `white-space: pre` to prevent it from wrapping. 
+The DOM hierarchy under a `FontResizer` component may be as complex as you wish, but there must be at least one child element (i.e. the text inside of a `FontResizer` component can not be a direct child text node of the component). 
 
 ```js
 import FontResizer from 'react-font-resizer'
 
 const MyComponent = ({text}) => (
     <FontResizer>
-        <div style={{whiteSpace: 'nowrap'}}>{text}</div>
+        <div>{text}</div>
     </FontResizer>
 )
 ```
+
+See the `examples` folder for a working demo.
