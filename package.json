@@ -1,6 +1,6 @@
 {
   "name": "react-font-resizer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Automatically resizes an element's font size to fit inside its parent container.",
   "repository": {
     "type": "git",
