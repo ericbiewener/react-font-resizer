@@ -17,7 +17,7 @@ const MyStatefulComponent = React.createClass({
 					<FontResizer>
 						<div>{this.state.text}</div>
 					</FontResizer>
-					<textarea onChange={this.onChange}>Type here</textarea>
+					<textarea onChange={this.onChange} defaultValue='Type here' />
 				</div>
 	}
 })
